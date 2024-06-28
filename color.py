@@ -14,10 +14,8 @@ def detect_color(hsv, color_ranges):
     
     return detected_color_name
 
-# Initialize Text-to-Speech engine
 engine = pyttsx3.init()
 
-# Define HSV ranges for each color (adjust these ranges as needed)
 color_ranges = {
     "red": ([0, 120, 70], [10, 255, 255]),
     "green": ([35, 100, 100], [90, 255, 255]),
@@ -27,11 +25,10 @@ color_ranges = {
     "purple": ([140, 50, 50], [170, 255, 255]),
     "pink": ([150, 50, 50], [170, 255, 255]),
     "cyan": ([85, 100, 100], [110, 255, 255]),
-    "gray": ([0, 0, 0], [179, 60, 150]),  # Example range for gray color
-    # Add more colors as needed
+    "gray": ([0, 0, 0], [179, 60, 150]),  
+    
 }
 
-# Initialize video capture from default camera (index 0)
 cap = cv2.VideoCapture(0)
 
 while True:
@@ -63,6 +60,5 @@ while True:
     if cv2.waitKey(1) & 0xFF == 27:
         break
 
-# Release the camera and close all OpenCV windows
 cap.release()
 cv2.destroyAllWindows()
